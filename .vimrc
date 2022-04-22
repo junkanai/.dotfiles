@@ -1,3 +1,7 @@
+" Shortcuts
+autocmd FileType python nnoremap smain iif<space>__name__<space>==<space>"__main__":<CR>main()<ESC>
+
+
 "General settings"
 syntax on
 set nocompatible
