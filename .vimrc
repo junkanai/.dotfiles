@@ -124,7 +124,9 @@ if has ('vim_starting')
 	let &t_SR .= "\e[4 q"
 endif
 
-" shortcuts in normal mode "
+" shortcuts in normal mode
+" noremap = nnoremap + vnoremap
+" noremap! = cnoremap + inoremap
 let mapleader = "\<space>"
 noremap <space> <nop>
 onoremap <space> <nop>
@@ -137,6 +139,16 @@ noremap <leader>l $
 nnoremap <leader>f :e<space>.<CR>
 nnoremap <leader>t :bo<space>term++rows=10<CR>
 nnoremap <leader>s :vs<CR><c-w>l:Vaffle<CR>
+nnoremap <leader>n :tabe<CR>:Vaffle<CR>
+nnoremap <leader>. :tabe ~/.vimrc<CR>
+"leader + m is being used for highlight"
+"leader + j or k is being used for easymotion
+
+nnoremap <leader>cy "uyiw:hi link foo Type<CR>:hi clryellow ctermfg=214 ctermbg=256<CR>:syntax keyword clryellow <c-r>"<CR>
+nnoremap <leader>cb "uyiw:hi link foo Type<CR>:hi clrblue ctermfg=109 ctermbg=256<CR>:syntax keyword clrblue <c-r>"<CR>
+nnoremap <leader>cr "uyiw:hi link foo Type<CR>:hi clrred ctermfg=167 ctermbg=256<CR>:syntax keyword clrred <c-r>"<CR>
+nnoremap <leader>cg "uyiw:hi link foo Type<CR>:hi clrgreen ctermfg=142 ctermbg=256<CR>:syntax keyword clrgreen <c-r>"<CR>
+nnoremap <leader>cw "uyiw:hi link foo Type<CR>:hi clrwhite ctermfg=223 ctermbg=256<CR>:syntax keyword clrwhite <c-r>"<CR>
 
 " shortcuts in insert mode "
 inoremap jk <ESC>
