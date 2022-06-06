@@ -35,7 +35,7 @@ set pumheight=10
 set virtualedit=onemore
 set wildmenu
 set foldmethod=indent
-set foldmethod=expr
+""set foldmethod=expr
 set foldlevel=100
 set history=1000
 set viminfo='20,\"1000
@@ -144,6 +144,7 @@ nnoremap <leader>s :vs<CR><c-w>l:Vaffle<CR>
 nnoremap <leader>n :tabe<CR>:Vaffle<CR>
 nnoremap <leader>. :tabe ~/.vimrc<CR>
 nmap <leader>r <space>w<c-j>;r
+nnoremap <leader>z za
 
 "leader + m is being used for highlight"
 "leader + j or k is being used for easymotion
@@ -221,6 +222,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 't9md/vim-quickhl'
 Plug 'simeji/winresizer'
 Plug 'LeafCage/yankround.vim'
+Plug 'pseewald/vim-anyfold'
 
 call plug#end()
 
@@ -271,6 +273,10 @@ let g:winresizer_start_key = '<c-t>'
 let g:winresizer_keycode_cancel = '<c-t>'
 let g:winresizer_vert_resize = 3
 let g:winresizer_horiz_resize = 1
+
+"AnyFold"
+filetype plugin indent on
+autocmd FileType * AnyFoldActivate
 
 " ColorScheme "
 autocmd ColorScheme * highlight Normal ctermbg=256
