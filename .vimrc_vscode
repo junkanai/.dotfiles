@@ -1,0 +1,56 @@
+set scrolloff=5
+set laststatus=2
+
+
+let mapleader = "\<space>"
+noremap <space> <nop>
+onoremap <space> <nop>
+
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+noremap <leader>h ^
+noremap <leader>l $
+
+nnoremap <leader>f :e<space>.<CR>
+inoremap jk <ESC>
+cnoremap jk <ESC><ESC>
+noremap! kd <c-w>
+
+nnoremap gs :%s///g<left><left><left>
+vnoremap gs :s///g<left><left><left>
+nnoremap v <c-v>
+nnoremap <c-v> v
+nnoremap <c-z> <nop>
+noremap! <c-l> <right>
+
+nnoremap j gj
+nnoremap k gk
+nnoremap L gt
+nnoremap H gT
+nnoremap J 20j
+nnoremap K 20k
+nnoremap gj J
+onoremap ad a"
+onoremap id i"
+
+nmap <c-l> <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-h> <c-w>h
+nmap <c-k> <c-w>k
+
+cnoremap <c-p> <up>
+cnoremap <c-n> <down>
+cnoremap <c-h> <left>
+cnoremap ; <space><c-h>
+
+nnoremap x "_x
+nnoremap X "_X
+
+tnoremap ;f exit<CR>
+tnoremap ;n <c-w>N
+tnoremap <c-n> <c-p>
+tnoremap <c-p> <c-n>
+tnoremap <c-l> <right>
+tnoremap <c-j> <c-w>j
+tnoremap <c-h> <left>
+tnoremap <c-k> <c-w>k

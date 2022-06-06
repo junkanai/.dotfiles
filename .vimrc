@@ -1,6 +1,8 @@
 " Shortcuts
 autocmd FileType python nnoremap smain iif<space>__name__<space>==<space>"__main__":<CR>main()<ESC>
-
+tnoremap ;c make<space>main<CR>
+tnoremap ;a ./a.out<CR>
+tnoremap ;m ./main<CR>
 
 "General settings"
 syntax on
@@ -141,6 +143,8 @@ nnoremap <leader>t :bo<space>term++rows=10<CR>
 nnoremap <leader>s :vs<CR><c-w>l:Vaffle<CR>
 nnoremap <leader>n :tabe<CR>:Vaffle<CR>
 nnoremap <leader>. :tabe ~/.vimrc<CR>
+nmap <leader>r <space>w<c-j>;r
+
 "leader + m is being used for highlight"
 "leader + j or k is being used for easymotion
 
@@ -153,13 +157,17 @@ nnoremap <leader>cw "uyiw:hi link foo Type<CR>:hi clrwhite ctermfg=223 ctermbg=2
 " shortcuts in insert mode "
 inoremap jk <ESC>
 cnoremap jk <ESC><ESC>
+noremap! jf <c-h>
 noremap! kd <c-w>
 
 inoremap ( ()<left>
+inoremap (<space> (<space><space>)<left><left>
 inoremap [ []<left>
 inoremap " ""<left>
 inoremap { {}<left>
+inoremap {<space> {<space><space>}<left><left>
 inoremap {J {<CR>}<ESC>O
+nnoremap {J C{<CR>}<ESC>O<ESC>p=l
 
 nnoremap gs :%s///g<left><left><left>
 vnoremap gs :s///g<left><left><left>
@@ -172,8 +180,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap L gt
 nnoremap H gT
-nnoremap J 20j
-nnoremap K 20k
+noremap J 20j
+noremap K 20k
 nnoremap gj J
 onoremap ad a"
 onoremap id i"
@@ -193,6 +201,9 @@ nnoremap X "_X
 
 tnoremap ;f exit<CR>
 tnoremap ;n <c-w>N
+tnoremap ;t <c-w>"+
+autocmd FileType python tnoremap ;r <c-w>k:let @+ = expand('%:t')<CR><c-w>jpython <c-w>"+<CR>
+autocmd FileType cpp tnoremap ;r <c-w>k:let @+ = expand('%:t')<CR><c-w>jg++ <c-w>"+<CR>
 tnoremap <c-n> <c-p>
 tnoremap <c-p> <c-n>
 tnoremap <c-l> <right>
@@ -212,6 +223,7 @@ Plug 'simeji/winresizer'
 Plug 'LeafCage/yankround.vim'
 
 call plug#end()
+
 
 " Vaffle "
 let g:vaffle_auto_cd = 1
@@ -277,6 +289,9 @@ autocmd ColorScheme * highlight Search cterm=bold ctermfg=196 ctermbg=256
 autocmd ColorScheme * highlight EasymotionTargetDefault cterm=bold ctermfg=196
 autocmd ColorScheme * highlight EasymotionShade ctermfg=239 ctermbg=256
 autocmd ColorScheme * highlight Folded ctermfg=223 ctermbg=239
+
+syn keyword cppType vector array valarray string
+syn keyword cppStatement rep
 
 colorscheme gruvbox
 set background=dark
