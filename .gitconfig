@@ -1,0 +1,9 @@
+[user]
+	email = kanai.jun.1020@gmail.com
+	name = junkanai
+
+[alias]
+	up = push origin HEAD
+	graph = log --graph --abbrev-commit --decorate --pretty=format:'%x09%C(auto)%h %Cgreen%cd%C(auto)%d %C(auto)%s %C(dim white)[%an]' --date=format:'%m/%d|%H:%M' --all -15
+	dev = checkout dev
+	mas = checkout master
